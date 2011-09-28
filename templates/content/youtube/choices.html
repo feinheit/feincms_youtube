@@ -1,0 +1,13 @@
+{% include 'content/youtube/first.html' %}
+<div id="carousel{{ content.id }}" class="youtube-feed carousel context">
+    <ul>
+    {% for entry in entries %}
+        <li class="youtube-entry">
+            <a href="{{ entry.link.0.href }}" title="{{ entry.media.title.text }}">
+                <img class="video-thumbnail" alt="{{ entry.media.description.text }}" src="{{ entry.media.thumbnail.1.url}}" width="{{ entry.media.thumbnail.1.width}}" height="{{ entry.media.thumbnail.1.height }}" />
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+<p></p>
