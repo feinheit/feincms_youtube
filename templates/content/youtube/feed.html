@@ -1,0 +1,17 @@
+<ul class="youtube-feed">
+{% for entry in entries %}
+    <li class="youtube-entry">
+        <h3 class="youtube-title"><a href="{{ entry.link.0.href }}">{{ entry.media.title.text }}</a></h3>
+        <div class="video-details clearfix">
+            <img class="video-thumbnail left" src="{{ entry.media.thumbnail.1.url}}" width="{{ entry.media.thumbnail.1.width}}" height="{{ entry.media.thumbnail.1.height }}" /></a>
+            <div class="video-details left">
+                <p class="youtube-description">{% if entry.media.description.text %}{{ entry.media.description.text }}{% endif %}</p>
+                <p class="rating">{{ entry.rating.average }}</p>
+            </div>
+        </div>
+    </li>
+{% endfor %}
+    
+</ul>
+
+<p></p>
